@@ -8,10 +8,11 @@
    include("containers.inc.php");
 
    /* Assign the first argument passed to the service variable - sets whether Prod or Sand */
-   if ($argv) {
+   if ($argc > 1) {
      $service=$argv[1];
    } else {
      print "Please supply a valid argument to the command line - either Production or Sandbox.";
+     die();
    }
 
    if ($service == "Sandbox") {
