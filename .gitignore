@@ -130,3 +130,6 @@ dmypy.json
 
 # ignore configuration files
 containers.inc.php
+
+# ignore file of oclc numbers
+oclcnums.txt
