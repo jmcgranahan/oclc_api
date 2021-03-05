@@ -5,9 +5,27 @@
    use GuzzleHttp\Client;
    use GuzzleHttp\Exception\RequestException;
    
-   include 'containers.inc.php';
+   include("containers.inc.php");
 
-   oclc_prod();
+   /* Assign the first argument passed to the service variable - sets whether Prod or Sand */
+   $service=$argv[1];
+
+   if ($service == "Sandbox") {
+     $key = $oclc_keys["sandbox"]["key"];
+     $secret = $oclc_keys["sandbox"]["secret"];
+     $registry_id = $oclc_keys["sandbox"]["registry_id"];
+     $principal_id = $oclc_keys["sandbox"]["principal_id"];
+     $idns = $oclc_keys["sandbox"]["idns"];
+   } elseif ($service == "Production") {
+     $key = $oclc_keys["production"]["key"];
+     $secret = $oclc_keys["production"]["secret"];
+     $registry_id = $oclc_keys["production"]["registry_id"];
+     $principal_id = $oclc_keys["production"]["principal_id"];
+     $idns = $oclc_keys["production"]["idns"];
+   } else {
+    print "Please enter either Sandbox or Production from the command line";
+   }
+   
 
    $wskey = new WSKey($key, $secret);
    
