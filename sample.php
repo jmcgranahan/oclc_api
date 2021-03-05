@@ -8,7 +8,11 @@
    include("containers.inc.php");
 
    /* Assign the first argument passed to the service variable - sets whether Prod or Sand */
-   $service=$argv[1];
+   if ($argv) {
+     $service=$argv[1];
+   } else {
+     print "Please supply a valid argument to the command line - either Production or Sandbox."
+   }
 
    if ($service == "Sandbox") {
      $key = $oclc_keys["sandbox"]["key"];
@@ -25,7 +29,6 @@
    } else {
     print "Please enter either Sandbox or Production from the command line";
    }
-   
 
    $wskey = new WSKey($key, $secret);
    
