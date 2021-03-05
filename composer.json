@@ -1,0 +1,14 @@
+{
+  "description" : "Authentication for OCLC API",
+  "repositories": 
+  [
+    {
+      "type": "git",
+      "url": "https://github.com/OCLC-Developer-Network/oclc-auth-php.git"
+    }
+  ],
+  "require" : 
+  {
+    "oclc/auth" : ">=3.0"
+  }
+}
