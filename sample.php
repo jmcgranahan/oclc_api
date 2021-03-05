@@ -11,7 +11,7 @@
    if ($argv) {
      $service=$argv[1];
    } else {
-     print "Please supply a valid argument to the command line - either Production or Sandbox."
+     print "Please supply a valid argument to the command line - either Production or Sandbox.";
    }
 
    if ($service == "Sandbox") {
